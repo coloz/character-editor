@@ -11,10 +11,12 @@
     flex-wrap: wrap;
 }
 
-[string-box]{
+[string-box] {
     margin-left: 20px;
     height: 100%;
-    textarea{
-        height: 100%;
+    textarea {
+        padding: 6px;
+        font-size: 16px;
+        line-height: 27px;
     }
 }
