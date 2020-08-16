@@ -1,0 +1,20 @@
+[app-box] {
+    display: flex;
+    // justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+[block-box] {
+    width: 130px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[string-box]{
+    margin-left: 20px;
+    height: 100%;
+    textarea{
+        height: 100%;
+    }
+}
