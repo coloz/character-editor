@@ -20,9 +20,14 @@
 }
 
 [ad-box]{
-    margin-top: 30px;
+    margin-left: 100px;
     p{
         // font-weight: 300;
         font-size: 14px;
     }
+}
+
+[flex-box]{
+    display: flex;
+    align-items: center;
 }
