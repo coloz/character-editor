@@ -19,8 +19,16 @@
     }
 }
 
-[ad-box]{
+[text-box]{
     margin-left: 100px;
+    p{
+        // font-weight: 300;
+        font-size: 14px;
+    }
+}
+
+[ad-box]{
+    margin-top: 50px;
     p{
         // font-weight: 300;
         font-size: 14px;
@@ -30,4 +38,9 @@
 [flex-box]{
     display: flex;
     align-items: center;
+}
+
+[flex-col]{
+    flex-direction: column;
+    align-items: flex-start;
 }

@@ -10,13 +10,20 @@ export class AppComponent {
 
   items = [];
 
-  charStr = ""
+  charStr = "";
+
+  width = 5;
+
+  height = 8;
+
+  size = 40;
+
+  get widthpx() {
+    return `${this.width * 26}px`
+  }
 
   ngOnInit(): void {
-    for (let index = 0; index < 40; index++) {
-      this.items.push({ isSelected: false })
-    }
-    this.process()
+    this.ngModelChange()
   }
 
   selectBlock(item) {
@@ -26,12 +33,21 @@ export class AppComponent {
   }
 
   process() {
-    this.charStr = `byte newchar[8] = {\n\tB`
-    for (let index = 0; index < 40; index++) {
+    this.charStr = `byte newchar[${this.height}] = {\n\tB`
+    for (let index = 0; index < this.size; index++) {
       this.charStr += this.items[index].isSelected ? '1' : '0';
-      if ((index + 1) % 5 == 0 && (index + 1) != 40) this.charStr += `,\n\tB`
+      if ((index + 1) % this.width == 0 && (index + 1) != this.size) this.charStr += `,\n\tB`
     }
-    this.charStr +=`\n}`
+    this.charStr += `\n}`
+  }
+
+  ngModelChange() {
+    this.size = this.width * this.height
+    this.items = []
+    for (let index = 0; index < this.size; index++) {
+      this.items.push({ isSelected: false })
+    }
+    this.process()
   }
 
 }
